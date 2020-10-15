@@ -55,6 +55,7 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        PlacarEquipe1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PlacarEquipe1.setText("0");
 
         BotaoResetPontuacao.setText("RESET");
@@ -71,6 +72,7 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        PlacarEquipe2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PlacarEquipe2.setText("0");
 
         BotaoMais3Equipe1.setText("+3 PONTOS");
@@ -101,13 +103,16 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        NomeEquipe1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeEquipe1.setText("Equipe1");
 
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Equipe2");
 
-        RodadasVencidasEquipe1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        RodadasVencidasEquipe1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RodadasVencidasEquipe1.setText("RodadasVencidas");
 
+        RodadasVencidasEquipe2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RodadasVencidasEquipe2.setText("RodadasVencidas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,13 +145,13 @@ public class Tela extends javax.swing.JFrame {
                             .addComponent(PlacarEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
-                                .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PlacarEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(RodadasVencidasEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)))))
+                                .addComponent(RodadasVencidasEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addComponent(PlacarEquipe2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

@@ -53,18 +53,18 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="PlacarEquipe1" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="RodadasVencidasEquipe1" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+                              <Component id="RodadasVencidasEquipe1" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PlacarEquipe2" min="-2" pref="70" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="RodadasVencidasEquipe2" min="-2" pref="90" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="RodadasVencidasEquipe2" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="PlacarEquipe2" alignment="1" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -129,6 +129,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="PlacarEquipe1">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
@@ -150,6 +151,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="PlacarEquipe2">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
@@ -187,22 +189,25 @@
     </Component>
     <Component class="javax.swing.JTextField" name="NomeEquipe1">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Equipe1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Equipe2"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="RodadasVencidasEquipe1">
       <Properties>
-        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="RodadasVencidas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="RodadasVencidasEquipe2">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="RodadasVencidas"/>
       </Properties>
     </Component>
