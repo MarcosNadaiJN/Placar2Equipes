@@ -257,6 +257,7 @@ public class Tela extends javax.swing.JFrame {
         pontuacaoEquipe1 = pontuacaoEquipe1 + 1;
         Pontuacao.verificaPontudacao(1);
         PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
+        PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
         RodadasVencidasEquipe1.setText(String.valueOf(QuantidadeRodadasVencidasEquipe1));
         EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_botaoMais1Equipe1ActionPerformed
@@ -278,6 +279,7 @@ public class Tela extends javax.swing.JFrame {
         pontuacaoEquipe2 = pontuacaoEquipe2 + 1;        
         Pontuacao.verificaPontudacao(2);
         PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
+        PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
         RodadasVencidasEquipe2.setText(String.valueOf(QuantidadeRodadasVencidasEquipe2));
         EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais1Equipe2ActionPerformed
@@ -286,6 +288,7 @@ public class Tela extends javax.swing.JFrame {
         pontuacaoEquipe1 = pontuacaoEquipe1 + 3;
         Pontuacao.verificaPontudacao(1);
         PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
+        PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
         RodadasVencidasEquipe1.setText(String.valueOf(QuantidadeRodadasVencidasEquipe1));
         EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais3Equipe1ActionPerformed
@@ -301,6 +304,7 @@ public class Tela extends javax.swing.JFrame {
         pontuacaoEquipe2 = pontuacaoEquipe2 + 3;        
         Pontuacao.verificaPontudacao(2);
         PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
+        PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
         RodadasVencidasEquipe2.setText(String.valueOf(QuantidadeRodadasVencidasEquipe2));
         EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais3Equipe2ActionPerformed
