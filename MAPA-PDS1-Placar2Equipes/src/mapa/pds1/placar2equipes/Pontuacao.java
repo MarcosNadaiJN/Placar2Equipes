@@ -6,11 +6,13 @@ public class Pontuacao {
             if (Tela.pontuacaoEquipe1 >= 12) {
                 Tela.QuantidadeRodadasVencidasEquipe1++;
                 Tela.pontuacaoEquipe1 = 0;
+                Tela.pontuacaoEquipe2 = 0;
             }
         } else if (equipe == 2) {
             if (Tela.pontuacaoEquipe2 >= 12) {
                 Tela.QuantidadeRodadasVencidasEquipe2++;
                 Tela.pontuacaoEquipe2 = 0;
+                Tela.pontuacaoEquipe1 = 0;
             }
         }
     }
