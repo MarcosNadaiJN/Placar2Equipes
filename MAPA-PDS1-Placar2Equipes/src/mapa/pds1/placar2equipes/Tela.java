@@ -17,11 +17,19 @@ public class Tela extends javax.swing.JFrame {
     public Tela() {
         initComponents();
     }
-    int pontuacaoEquipe1 = 0;
-    int pontuacaoEquipe2 = 0;
+    public static int pontuacaoEquipe1 = 0;
+    public static int pontuacaoEquipe2 = 0;
     
-    int QuantidadeRodadasVencidasEquipe1 = 0;
-    int QuantidadeRodadasVencidasEquipe2 = 0;
+    public static int QuantidadeRodadasVencidasEquipe1 = 0;
+    public static int QuantidadeRodadasVencidasEquipe2 = 0;
+    
+    public static int CodigoEquipeVencedora = 0;
+    
+    public static String TextoNomeEquipe1 = "Equipe1";
+    public static String TextoNomeEquipe2 = "Equipe2";
+    
+   
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,6 +40,9 @@ public class Tela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         botaoMais1Equipe1 = new javax.swing.JButton();
         PlacarEquipe1 = new javax.swing.JLabel();
         BotaoResetPontuacao = new javax.swing.JButton();
@@ -42,9 +53,19 @@ public class Tela extends javax.swing.JFrame {
         BotaoMais3Equipe2 = new javax.swing.JButton();
         BotaoMenos1Equipe2 = new javax.swing.JButton();
         NomeEquipe1 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        NomeEquipe2 = new javax.swing.JTextField();
         RodadasVencidasEquipe1 = new javax.swing.JLabel();
         RodadasVencidasEquipe2 = new javax.swing.JLabel();
+        EquipeVencedora = new javax.swing.JLabel();
+        OkEquipe1 = new javax.swing.JButton();
+        OkEquipe2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+
+        jTextField2.setText("jTextField2");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,14 +127,36 @@ public class Tela extends javax.swing.JFrame {
         NomeEquipe1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NomeEquipe1.setText("Equipe1");
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Equipe2");
+        NomeEquipe2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NomeEquipe2.setText("Equipe2");
 
         RodadasVencidasEquipe1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RodadasVencidasEquipe1.setText("RodadasVencidas");
 
         RodadasVencidasEquipe2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RodadasVencidasEquipe2.setText("RodadasVencidas");
+
+        EquipeVencedora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EquipeVencedora.setText("...");
+
+        OkEquipe1.setText("Ok");
+        OkEquipe1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        OkEquipe1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkEquipe1ActionPerformed(evt);
+            }
+        });
+
+        OkEquipe2.setText("Ok");
+        OkEquipe2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkEquipe2ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("Equipe Vencedora");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,69 +166,87 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(NomeEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotaoMenos1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoMais1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotaoMais3Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(BotaoResetPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(66, 66, 66)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(BotaoMais3Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BotaoMenos1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(BotaoMais1Equipe2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(BotaoMenos1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotaoMais3Equipe2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PlacarEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
-                                .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NomeEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(OkEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EquipeVencedora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(RodadasVencidasEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18))
-                            .addComponent(PlacarEquipe2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(OkEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NomeEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PlacarEquipe2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botaoMais1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoMais1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NomeEquipe1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RodadasVencidasEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlacarEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PlacarEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoMais1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoMais1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoMais3Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoMais3Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(BotaoResetPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(NomeEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(OkEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(NomeEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(OkEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RodadasVencidasEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RodadasVencidasEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotaoMenos1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotaoMenos1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(EquipeVencedora, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PlacarEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PlacarEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotaoMais1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoMais1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotaoMais3Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotaoMais3Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotaoMenos1Equipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotaoMenos1Equipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BotaoResetPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -194,24 +255,39 @@ public class Tela extends javax.swing.JFrame {
 
     private void botaoMais1Equipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMais1Equipe1ActionPerformed
         pontuacaoEquipe1 = pontuacaoEquipe1 + 1;
+        Pontuacao.verificaPontudacao(1);
         PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
+        RodadasVencidasEquipe1.setText(String.valueOf(QuantidadeRodadasVencidasEquipe1));
+        EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_botaoMais1Equipe1ActionPerformed
 
     private void BotaoResetPontuacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoResetPontuacaoActionPerformed
         pontuacaoEquipe1 = 0;
         pontuacaoEquipe2 = 0;
+        QuantidadeRodadasVencidasEquipe1 = 0;
+        QuantidadeRodadasVencidasEquipe2 = 0;
+        CodigoEquipeVencedora = 0;
         PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
         PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
+        RodadasVencidasEquipe1.setText("Rodadas Vencidas");
+        RodadasVencidasEquipe2.setText("Rodadas Vencidas");
+        EquipeVencedora.setText("...");
     }//GEN-LAST:event_BotaoResetPontuacaoActionPerformed
 
     private void BotaoMais1Equipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais1Equipe2ActionPerformed
-        pontuacaoEquipe2 = pontuacaoEquipe2 + 1;
+        pontuacaoEquipe2 = pontuacaoEquipe2 + 1;        
+        Pontuacao.verificaPontudacao(2);
         PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
+        RodadasVencidasEquipe2.setText(String.valueOf(QuantidadeRodadasVencidasEquipe2));
+        EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais1Equipe2ActionPerformed
 
     private void BotaoMais3Equipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais3Equipe1ActionPerformed
         pontuacaoEquipe1 = pontuacaoEquipe1 + 3;
+        Pontuacao.verificaPontudacao(1);
         PlacarEquipe1.setText(String.valueOf(pontuacaoEquipe1));
+        RodadasVencidasEquipe1.setText(String.valueOf(QuantidadeRodadasVencidasEquipe1));
+        EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais3Equipe1ActionPerformed
 
     private void BotaoMenos1Equipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMenos1Equipe1ActionPerformed
@@ -222,8 +298,11 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoMenos1Equipe1ActionPerformed
 
     private void BotaoMais3Equipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais3Equipe2ActionPerformed
-        pontuacaoEquipe2 = pontuacaoEquipe2 + 3;
+        pontuacaoEquipe2 = pontuacaoEquipe2 + 3;        
+        Pontuacao.verificaPontudacao(2);
         PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
+        RodadasVencidasEquipe2.setText(String.valueOf(QuantidadeRodadasVencidasEquipe2));
+        EquipeVencedora.setText(Pontuacao.verificaPlacar());
     }//GEN-LAST:event_BotaoMais3Equipe2ActionPerformed
 
     private void BotaoMenos1Equipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMenos1Equipe2ActionPerformed
@@ -232,6 +311,14 @@ public class Tela extends javax.swing.JFrame {
             PlacarEquipe2.setText(String.valueOf(pontuacaoEquipe2));
         }
     }//GEN-LAST:event_BotaoMenos1Equipe2ActionPerformed
+
+    private void OkEquipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkEquipe1ActionPerformed
+        TextoNomeEquipe1 = NomeEquipe1.getText();
+    }//GEN-LAST:event_OkEquipe1ActionPerformed
+
+    private void OkEquipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkEquipe2ActionPerformed
+        TextoNomeEquipe2 = NomeEquipe2.getText();
+    }//GEN-LAST:event_OkEquipe2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,12 +365,19 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton BotaoMenos1Equipe1;
     private javax.swing.JButton BotaoMenos1Equipe2;
     private javax.swing.JButton BotaoResetPontuacao;
+    public javax.swing.JLabel EquipeVencedora;
     private javax.swing.JTextField NomeEquipe1;
+    private javax.swing.JTextField NomeEquipe2;
+    private javax.swing.JButton OkEquipe1;
+    private javax.swing.JButton OkEquipe2;
     private javax.swing.JLabel PlacarEquipe1;
     private javax.swing.JLabel PlacarEquipe2;
     private javax.swing.JLabel RodadasVencidasEquipe1;
     private javax.swing.JLabel RodadasVencidasEquipe2;
     private javax.swing.JButton botaoMais1Equipe1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
