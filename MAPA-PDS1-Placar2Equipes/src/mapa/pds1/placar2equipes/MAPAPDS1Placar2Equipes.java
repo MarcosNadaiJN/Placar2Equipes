@@ -17,7 +17,9 @@ public class MAPAPDS1Placar2Equipes {
     public static void main(String[] args) {
         // TODO code application logic here  
         Tela tela = new Tela();
-        tela.setVisible(true); 
+        tela.setVisible(true);
+        
+        
     }
     
 }
