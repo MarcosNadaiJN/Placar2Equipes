@@ -20,9 +20,17 @@ public class Pontuacao {
    public static String verificaPlacar () {
        if (Tela.QuantidadeRodadasVencidasEquipe1 == 3) {
            Tela.CodigoEquipeVencedora = 1;
+           Tela.pontuacaoEquipe1 = 0;
+           Tela.pontuacaoEquipe2 = 0;
+           Tela.QuantidadeRodadasVencidasEquipe1 = 0;
+           Tela.QuantidadeRodadasVencidasEquipe2 = 0;
            return Tela.TextoNomeEquipe1;
        } else if (Tela.QuantidadeRodadasVencidasEquipe2 == 3) {
            Tela.CodigoEquipeVencedora = 2;
+           Tela.pontuacaoEquipe1 = 0;
+           Tela.pontuacaoEquipe2 = 0;
+           Tela.QuantidadeRodadasVencidasEquipe1 = 0;
+           Tela.QuantidadeRodadasVencidasEquipe2 = 0;
            return Tela.TextoNomeEquipe2;
        } else {
        } return "...";
